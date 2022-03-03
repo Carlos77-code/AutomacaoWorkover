@@ -9,7 +9,7 @@ namespace AutomacaoWorkover
 {
 
     [TestClass]
-    public class RegistroDeCadastro
+    public class RegistroDeLogin
     {
         public IWebDriver Driver { get; set; }
 
@@ -30,17 +30,16 @@ namespace AutomacaoWorkover
         }
 
         [Test]
-        public void RealizandoCadastroNoSite()
+        public void RealizandoLoginNoSite()
         {
-            Driver.FindElement(By.ClassName("btn-secondary")).Click();
-            Driver.FindElement(By.Id("name")).SendKeys("Fernando Medeiros");
-            Driver.FindElement(By.Id("email")).SendKeys("teste@gmail.com");
-            Driver.FindElement(By.Id("password")).SendKeys("12345678");
-            Driver.FindElement(By.Id("phone")).SendKeys("11984546145");
-            Driver.FindElement(By.ClassName("checkmark")).Click();
-            Driver.FindElement(By.XPath("/html/body/section/div[2]/form/div[4]/button")).Click();
+            Driver.FindElement(By.Id("email")).SendKeys("carloslimafernandes@hotmail.com");
+            Driver.FindElement(By.Id("password")).SendKeys("elohin77");
+            Driver.FindElement(By.XPath("/html/body/section/div[2]/form/div[3]/button")).Click();
+            Driver.FindElement(By.XPath("/html/body/section[1]/div/div/i")).Click();
+            Driver.FindElement(By.Id("academy_avatar_menu_logout")).Click();
 
-            Assert.AreEqual("Workover", Driver.Title);
+
+            Assert.AreEqual("Login | Workover", Driver.Title);
         }
     }
 }
