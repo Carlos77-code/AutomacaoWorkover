@@ -6,9 +6,11 @@
 > Status do Projeto: Em desenvolvimento :warning:
 
 ## Tarefas em aberto
-- [] Tarefa 1: Criar estrutura do projeto.
+- [x] Tarefa 1: Criar estrutura do projeto.
 - [x] Tarefa 2: Criar método para abrir/fechar o navegador e acessar o site Investidor 10.
 - [x] Tarefa 3: Criar as interações de clique e verificação da Home page.
+- [x] Tarefa 4: Criar uma classe para o cadastro de usuário.
+- [] Tarefa 5: Implementar uma bibliteca para gerar massa fake.
 
 ## Descrição do Projeto
 Este projeto tem por motivação realizar a automação de cadastro e e verificar se todas as telas e páginas de curso estão funcionando corretamente.
