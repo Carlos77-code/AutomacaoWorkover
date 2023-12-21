@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using System;
 using System.Threading;
 
 namespace AutomacaoWorkover
@@ -10,15 +11,12 @@ namespace AutomacaoWorkover
         public void Teste()
         {
             driver.FindElement(By.ClassName("btn-login")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.XPath("//*[@id=\'loginModalElement\']/div/div/form/div[3]/div[2]/p/a/strong")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("name")).SendKeys("QAorDev");
-            driver.FindElement(By.Id("email")).SendKeys("qa@teste.com");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver.FindElement(By.Id("identifier")).SendKeys("qaordev@hotmail.com");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            driver.FindElement(By.XPath("//*[@id=\'recaptcha-anchor-label\']")).Click();
             driver.FindElement(By.XPath("//*[@id=\'loginModalElement\']/div/div/form/div[3]/div[1]/button")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("password")).SendKeys("qa1234");
-            driver.FindElement(By.XPath("//*[@id=\'loginModalElement\']/div/div/form/div[3]/div[1]/button")).Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
         }
     }
 }
